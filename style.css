@@ -12,6 +12,10 @@
 header{
 max-width: 100%;
 height: 15vh;
+position:sticky;
+top: 0;
+background-color: white;
+z-index: 1000;
 }
 .header-content{
   width: 90%;
@@ -20,6 +24,7 @@ height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 nav, a{
   font-family: "Montserrat", sans-serif;
@@ -41,6 +46,9 @@ nav, a:hover{
 }
 .visit:hover{
   color: white;
+}
+.hamburger{
+  display: none;
 }
 
 .hero-sec{
@@ -147,31 +155,32 @@ main{
   color: #101A31;
   font-weight: 600;
 }
-.parent-label{
-  /* border: 2px solid black; */
+
+/* .parent-label{
+  border: 2px solid blue;
   width: 100%;
   height: 90vh;
   margin-top: 20px;
-}
-.parent-content{
-  /* border: 2px solid black; */
+} */
+/* .parent-content{
+  border: 2px solid red;
   width: 90%;
   height: 100%;
   margin: auto;
   display: flex;
   gap: 40px;
-}
-form{
+} */
+/* form{
   width: 70%;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 input:focus{
   outline: none;
-}
-.Big-input{
+} */
+/* .Big-input{
   height: 200px;
   font-family: "Montserrat" ,sans-serif;
   font-size: 13px;
@@ -184,8 +193,8 @@ input:focus{
 .fname{
   display: flex;
   gap: 20px;
-}
-.fname input{
+} */
+/* .fname input{
   width: 380px;
   height: 50px;
   padding-left: 10px;
@@ -223,7 +232,7 @@ input:focus{
 .contact-info{
   width: 30%;
   height: 100%;
-  /* border: 2px solid black; */
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -249,6 +258,127 @@ input:focus{
   font-size: 16px;
   color: #969290;
   line-height: 25px;
+} */
+
+
+.users-info{
+  /* border: 2px solid blue; */
+  width: 90%;
+  height: 90vh;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+form{
+  /* border: 2px solid red; */
+  width: 60%;
+  height:100%;
+}
+input:focus{
+  outline: none;
+}
+
+.message{
+  /* border: 2px solid black; */
+  width: 100%;
+  height:50% ;
+}
+.message input{
+  width: 99%;
+  height:95%;
+  padding-left:5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #495057;
+}
+.Big-input{
+  padding-bottom:200px;
+  box-sizing: border-box;
+}
+
+.details{
+  display: flex;
+  /* border: 2px solid blue; */
+  width:99%;
+  height:10%;
+  gap: 20px;
+  margin-top: 20px;
+}
+.details input{
+  width:100%;
+  padding-left: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #495057;
+
+}
+
+.enter{
+display: flex;
+flex-direction: column;
+width: 99%;
+height:10%;
+/* border: 2px solid red; */
+margin-top: 20px;
+}
+.enter input{
+  width: 99%;
+  height: 100%;
+  padding-left:5px; 
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #495057;
+}
+
+.submit-btn{
+  margin-top: 35px;
+  padding:18px 44px;
+  border: 1px solid #cead9a;
+  background-color: white;
+  font-family: "Josefin Sans",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color:#cead9a;
+  transition: 1s;
+  cursor: pointer;
+}
+.submit-btn:hover{
+  background-color: #be9278;
+  color: white;
+}
+.contact-infos{
+  width: 40%;
+  height: 100%;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.address{
+  /* border: 2px solid black; */
+  display: flex; 
+  gap: 10px;
+  
+}
+.address i{
+  font-size:22px;
+  color:#999195;
+}
+.address h3{
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Josefin Sans",sans-serif;
+  color: #2A2A2A;
+}
+.address p{
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Montserrat",sans-serif;
+  color:#999195;
 }
 
 footer{
@@ -259,9 +389,10 @@ footer{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 40px;
+  margin-top: 250px;
   display: flex;
   gap: 100px;
+  padding: 20px 0px;
 }
 .footer-map{
   width: 50%;
@@ -299,7 +430,7 @@ footer{
 }
 .footer-contents p{
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   color: #FFFFFF;
 }
@@ -368,11 +499,15 @@ ul{
   nav{
     display: none;
   }
+  .hamburger{
+    display: block;
+    font-size: 30px;
+  }
   .hero-sec{
     height: 30%;
   }
   .welcome .rotate{
-    width: 80%;
+    width:60%;
   }
   .welcome h3{
     font-size: 20px;
@@ -385,49 +520,90 @@ ul{
     display: none;
   }
   
-  .parent-content{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    width: 100%;
-    padding-right: 200px;
-  
-  }
+
   .get-in{
-    width: 95%;
-    margin-left: 20px;
+    /* width: 95%; */
+    /* margin-left: 20px; */
+    font-size: 0px;
   }
-  form{
-    width:95%;
-    
-  }
-  form .fname{
-    display: flex;
-    flex-direction: column;
-    margin-left:20px ;
-  }
-  .fname input{
-    width:100%;
-  }
-  .Big-input{
-    height: 200px;
-    margin-left: 20px;
-  }
-  .Big-input2{
-    margin-left: 20px;
-  }
-  .submit-btn{
-    margin-left:20px ;
-  }
+ .users-info{
+  flex-direction: column;
+  
+ }
+.contact-info{
+  width: 100%;
+}
+input{
+  border: 1px solid rgba(128, 128, 128, 0.379);
+}
+.Big-input{
+  padding-top:10px;
+}
+.details{
+  flex-direction: column;
+  height: 30%;
+}
+.details input{
+  height: 100%;
+
+}
+.enter{
+  height:15%;
+}
+.enter input{
+  height: 100%;
+}
+.contact-infos{
+  margin-top: 150px;
+  gap: 30px;
+}
+.address{
+  gap: 20px;
+}
+
+.address h3{
+  font-size: 18px;
+  width: 100%;
+}
+.address p{
+  font-size: 16px;
+}
+.footer{
+  margin-top: 250px;
+}
+
  .footer-contact{
   flex-direction: column;
  }
+ .footer-contents{
+  margin-left: 10px;
+ }
+ .footer-nav{
+  margin-left: 10px;
+ }
+
   .footer-map{
     display: none;
   }
 
 
   
+}
+@media only screen and (max-width:500px) {
+  .address h3{
+    font-size: 16px;
+  }
+  .address p{
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width:408px) {
+  .address h3{
+    font-size: 12px;
+  }
+  .address p{
+    font-size: 10px;
+  }
 }
 
 
